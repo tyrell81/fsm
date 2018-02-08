@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>613</width>
-    <height>493</height>
+    <width>610</width>
+    <height>491</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>FSM</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QPushButton" name="btnEventPalm1">
@@ -138,13 +138,29 @@
      <string/>
     </property>
    </widget>
+   <widget class="QTextBrowser" name="txtLogBrowser">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>120</y>
+      <width>591</width>
+      <height>311</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>613</width>
+     <width>610</width>
      <height>20</height>
     </rect>
    </property>

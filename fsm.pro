@@ -25,10 +25,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    logbrowser.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    logbrowser.h
 
 FORMS += \
         mainwindow.ui
