@@ -3,14 +3,12 @@
 #include "logbrowser.h"
 #include "mainwindow.h"
 
-Q_LOGGING_CATEGORY(hfFsm, "hf.fsm")
-
 LogBrowser::LogBrowser(QObject* parent)
     : QObject(parent)
 {
     qRegisterMetaType<QtMsgType>("QtMsgType");
     logMainWindow = new MainWindow;
-//    connect(this, SIGNAL(sendMessage(QtMsgType, QMessageLogContext, QString)), logMainWindow, SLOT(outputMessage(QtMsgType, QMessageLogContext, QString)), Qt::QueuedConnection);
+    //    connect(this, SIGNAL(sendMessage(QtMsgType, QMessageLogContext, QString)), logMainWindow, SLOT(outputMessage(QtMsgType, QMessageLogContext, QString)), Qt::QueuedConnection);
     connect(this, SIGNAL(sendMessage(QtMsgType, QMessageLogContext, QString)), logMainWindow, SLOT(outputMessage(QtMsgType, QMessageLogContext, QString)));
     logMainWindow->show();
 }

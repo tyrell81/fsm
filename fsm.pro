@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui scxml
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -26,11 +26,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    logbrowser.cpp
+    logbrowser.cpp \
+    fsm.cpp
 
 HEADERS += \
         mainwindow.h \
-    logbrowser.h
+    logbrowser.h \
+    fsm.h
 
 FORMS += \
         mainwindow.ui
+
+STATECHARTS +=
+
+RESOURCES += \
+    fsm.qrc

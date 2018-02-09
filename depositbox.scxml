@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scxml xmlns="http://www.w3.org/2005/07/scxml" version="1.0" binding="early" xmlns:qt="http://www.qt.io/2015/02/scxml-ext" name="depositbox_single" qt:editorversion="4.5.0">
+    <state id="CheckCell">
+        <qt:editorinfo geometry="-279.59;116.78;-51.50;-100.21;153;100" scenegeometry="-279.59;116.78;-331.09;16.57;153;100"/>
+        <transition type="external" event="evCheckCellFail" target="CellNotFound">
+            <qt:editorinfo movePoint="-13.43;7.47"/>
+        </transition>
+        <transition type="external" event="evCheckCellSuccess" target="Identification">
+            <qt:editorinfo movePoint="1.50;2.99"/>
+        </transition>
+        <onentry>
+            <log expr="CheckCell" label="state"/>
+            <send event="sendCheckCell"/>
+        </onentry>
+    </state>
+    <state id="CellNotFound">
+        <qt:editorinfo geometry="-212.38;243.31;-153.35;-50;222.28;100" scenegeometry="-212.38;243.31;-365.73;193.31;222.28;100"/>
+        <transition type="external" event="evCellNotFoundDone" target="Final_3">
+            <qt:editorinfo movePoint="-10.45;0"/>
+        </transition>
+        <onentry>
+            <log expr="CellNotFound"/>
+        </onentry>
+    </state>
+    <final id="Final_3">
+        <qt:editorinfo geometry="-254.59;389.59;-20;-20;40;40" scenegeometry="-254.59;389.59;-274.59;369.59;40;40"/>
+        <onentry>
+            <log expr="Stop" label="state"/>
+        </onentry>
+    </final>
+    <state id="Identification">
+        <qt:editorinfo geometry="52.25;66.57;-6.43;-50;138.86;100" scenegeometry="52.25;66.57;45.82;16.57;138.86;100"/>
+        <transition type="external" event="evIdentificationSuccess" target="CheckCellIdentification">
+            <qt:editorinfo movePoint="-10.45;7.46"/>
+        </transition>
+        <transition type="external" event="evIdentificationFail" target="UserNotFound"/>
+        <onentry>
+            <log expr="Identification" label="state"/>
+        </onentry>
+    </state>
+    <state id="CheckCellIdentification">
+        <qt:editorinfo geometry="112.25;243.31;-120;-50;246;100" scenegeometry="112.25;243.31;-7.75;193.31;246;100"/>
+        <transition type="external" event="evCheckCellIdentificationSuccess" target="UnlockCell"/>
+        <transition type="external" event="evCheckCellIdentificationFail" target="UserNotFound">
+            <qt:editorinfo endTargetFactors="25.85;60.81"/>
+        </transition>
+        <onentry>
+            <log expr="CheckCellIdentification" label="state"/>
+        </onentry>
+    </state>
+    <state id="UnlockCell">
+        <qt:editorinfo geometry="58.53;414.97;-60;-50;237;100" scenegeometry="58.53;414.97;-1.47;364.97;237;100"/>
+        <transition type="external" event="evUnlockCellTimeout" target="UnlockCellTimeout"/>
+        <onentry>
+            <log expr="UnlockCell" label="state"/>
+        </onentry>
+    </state>
+    <state id="UserNotFound">
+        <qt:editorinfo geometry="459.31;66.57;-60;-50;120;100" scenegeometry="459.31;66.57;399.31;16.57;120;100"/>
+        <transition type="external" event="evUserNotFoundDone" target="Final_7"/>
+        <onentry>
+            <log expr="UserNotFound" label="state"/>
+        </onentry>
+    </state>
+    <final id="Final_7">
+        <qt:editorinfo geometry="792.62;66.57;-20;-20;40;40" scenegeometry="792.62;66.57;772.62;46.57;40;40"/>
+        <onentry>
+            <log expr="Stop" label="state"/>
+        </onentry>
+    </final>
+    <state id="UnlockCellTimeout">
+        <qt:editorinfo geometry="508.87;414.97;-60;-50;207;100" scenegeometry="508.87;414.97;448.87;364.97;207;100"/>
+        <transition type="external" event="evUnlockCellTimeoutDone" target="Final_8">
+            <qt:editorinfo movePoint="78.75;0"/>
+        </transition>
+        <onentry>
+            <log expr="UnlockCellTimeout" label="state"/>
+        </onentry>
+    </state>
+    <final id="Final_8">
+        <qt:editorinfo geometry="903.01;414.97;-20;-20;40;40" scenegeometry="903.01;414.97;883.01;394.97;40;40"/>
+        <onentry>
+            <log expr="Stop" label="state"/>
+        </onentry>
+    </final>
+</scxml>

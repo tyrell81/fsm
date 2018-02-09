@@ -5,11 +5,15 @@
 #include <QMessageBox>
 #include <QTextStream>
 
-MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::MainWindow)
+MainWindow::MainWindow(QWidget* parent)
+    : QMainWindow(parent)
+    , ui(new Ui::MainWindow)
+    , m_fsm(this)
 {
     ui->setupUi(this);
+    connect(this, SIGNAL(identifyFinished(int)), &m_fsm, SLOT(onIdentifyFinished(int)));
+    connect(this, SIGNAL(depositboxCellOpened(int)), &m_fsm, SLOT(onDepositboxCellOpened(int)));
+    connect(this, SIGNAL(depositboxCellClosed(int)), &m_fsm, SLOT(onDepositboxCellClosed(int)));
 }
 
 MainWindow::~MainWindow()
@@ -17,7 +21,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::outputMessage(QtMsgType type, const QMessageLogContext &context, const QString &msg)
+void MainWindow::outputMessage(QtMsgType type, const QMessageLogContext& context, const QString& msg)
 {
     QString type_msg = "";
 
@@ -66,4 +70,61 @@ void MainWindow::save()
     QTextStream stream(&file);
     stream << ui->txtLogBrowser->toPlainText();
     file.close();
+}
+
+void MainWindow::on_btnStart_released()
+{
+    // Start QScxmlStateMachine
+    m_fsm.run("depositbox.scxml");
+}
+
+void MainWindow::on_btnPalm1_released()
+{
+    emit identifyFinished(1);
+}
+
+void MainWindow::on_btnPalm2_released()
+{
+    emit identifyFinished(2);
+}
+
+void MainWindow::on_btnCard1_released()
+{
+    emit identifyFinished(11);
+}
+
+void MainWindow::on_btnCard2_released()
+{
+    emit identifyFinished(12);
+}
+
+void MainWindow::on_btnOpenCell2_released()
+{
+    emit depositboxCellOpened(2);
+
+}
+
+void MainWindow::on_btnOpenCell3_released()
+{
+    emit depositboxCellOpened(3);
+}
+
+void MainWindow::on_btnOpenCell4_released()
+{
+    emit depositboxCellOpened(4);
+}
+
+void MainWindow::on_btnCloseCell2_released()
+{
+    emit depositboxCellClosed(2);
+}
+
+void MainWindow::on_btnCloseCell3_released()
+{
+    emit depositboxCellClosed(3);
+}
+
+void MainWindow::on_btnCloseCell4_released()
+{
+    emit depositboxCellClosed(4);
 }

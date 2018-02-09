@@ -6,8 +6,6 @@
 
 #define DEBUG true
 
-Q_DECLARE_LOGGING_CATEGORY(hfFsm)
-
 class MainWindow;
 
 class LogBrowser : public QObject {

@@ -14,7 +14,7 @@
    <string>FSM</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="btnEventPalm1">
+   <widget class="QPushButton" name="btnPalm1">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -24,10 +24,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>EventPalm1</string>
+     <string>Palm1</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnEventPalm2">
+   <widget class="QPushButton" name="btnPalm2">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -37,10 +37,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>EventPalm2</string>
+     <string>Palm2</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnEventCard1">
+   <widget class="QPushButton" name="btnCard1">
     <property name="geometry">
      <rect>
       <x>90</x>
@@ -50,10 +50,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>EventCard1</string>
+     <string>Card1</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnEventCard2">
+   <widget class="QPushButton" name="btnCard2">
     <property name="geometry">
      <rect>
       <x>90</x>
@@ -63,10 +63,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>EventCard2</string>
+     <string>Card2</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnEventInputNumber">
+   <widget class="QPushButton" name="btnOpenCell2">
     <property name="geometry">
      <rect>
       <x>170</x>
@@ -76,10 +76,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>EventInputNumber</string>
+     <string>Open Cell 2</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnEventInputEnter">
+   <widget class="QPushButton" name="btnOpenCell3">
     <property name="geometry">
      <rect>
       <x>170</x>
@@ -89,10 +89,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>EventInputEnter</string>
+     <string>Open Cell 3</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnEventInputCancel">
+   <widget class="QPushButton" name="btnOpenCell4">
     <property name="geometry">
      <rect>
       <x>170</x>
@@ -102,7 +102,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>EventInputCancel</string>
+     <string>Open Cell 4</string>
     </property>
    </widget>
    <widget class="QLabel" name="lblStateLabel">
@@ -152,6 +152,63 @@
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnStart">
+    <property name="geometry">
+     <rect>
+      <x>499</x>
+      <y>0</y>
+      <width>101</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Start</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnCloseCell2">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>0</y>
+      <width>111</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Close Cell 2</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnCloseCell3">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>20</y>
+      <width>111</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Open Cell 3</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnCloseCell4">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>40</y>
+      <width>111</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Close Cell 4</string>
     </property>
    </widget>
   </widget>
